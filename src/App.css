@@ -128,7 +128,7 @@
   align-items: flex-start;
 }
 .portfolio-holder {
-  top: 35%;
+  top: 30%;
   width: 65vw;
   /* background-color: red; */
   display: flex;
@@ -150,10 +150,9 @@
   letter-spacing: 3px;
   border-bottom: 2px solid white;
   transform: all 1s;
-
 }
 .about-header {
-  top: -10%;
+  top: -20%;
   align-self: center;
   font-size: 45px;
   letter-spacing: 3px;
@@ -294,7 +293,7 @@
   align-items: flex-start;
 }
 .email {
-  width: 98%;
+  width: 100%;
   height: 50px;
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.54);
@@ -302,12 +301,13 @@
   margin-bottom: 20px;
   font-size: 20px;
   letter-spacing: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   color: white;
 }
 
 .textarea {
   resize:vertical;
-  width: 98%;
+  width: 100%;
   height: 200px;
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.54);
@@ -345,7 +345,7 @@
 }
 .linkedin{
   position: absolute;
-  top: 16%;
+  top: 0%;
   display: flex;
   width: 80%;
   /* background-color: red; */
@@ -356,7 +356,7 @@
   margin-bottom: 50px;
 }
 .about-holder{
-  top: -3%;
+  top: -13%;
   width: 50%;
   /* background-color: blue; */
   height: 80px;
@@ -426,12 +426,58 @@
   }
 }
 
+@media only screen and (min-width:601px) and (max-width:914px)  {
+  .skills-holder {
+    top: 10%;
+  }
+  .portfolio-holder {
+    top: 30%;
+  }
+  .about-header{
+    top: -20%;
+  }
+  .about-holder{
+    top: -15%;
+  }
+  .linkedin {
+    top: 0%;
+  }
+  .about-text{
+    font-size: 15px;
+  }
+  .banner3{
+    height: 220vh;
+  }
+  .contact{
+    width: 60%;
+    top: 62%;
+  }
+  .contact-header{
+    top: 55%;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .bottom-left {
     display: none;
   }
   .bottom-right {
     display: none;
+  }
+  .skills-holder {
+    top: 15%;
+  }
+  .portfolio-holder {
+    top: 40%;
+  }
+  .about-header{
+    top: -5%;
+  }
+  .about-holder{
+    top: 0%;
+  }
+  .about-text{
+    font-size: 15px;
   }
   .icon:hover {
     margin-bottom: 0px;
@@ -441,5 +487,24 @@
   }
   .banner3{
     height: 300vh;
+  }
+  .linkedin {
+    top: 20%;
+  }
+  .contact{
+    width: 80%;
+    top: 72%;
+  }
+  .contact-header{
+    top: 68%;
+  }
+  .email {
+    font-size: 15px;
+  }
+  .contact-text{
+    font-size: 18px;
+  }
+  .textarea{
+    font-size: 15px;
   }
 }

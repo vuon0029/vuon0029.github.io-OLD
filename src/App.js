@@ -15,6 +15,7 @@ import {
   SiFigma,
   SiGithub,
 } from "react-icons/si";
+import { useForm, ValidationError } from "@formspree/react";
 
 function App() {
   const homeRef = useRef();
@@ -53,6 +54,10 @@ function App() {
       contact.removeChild(github);
     };
   }, []);
+  const [state, handleSubmit] = useForm("mqkarobp");
+  if (state.succeeded) {
+    return <p>Thanks for sending!</p>;
+  }
 
   return (
     <div className="App">
@@ -162,6 +167,7 @@ function App() {
         {/* ABOUT */}
         <div className="container">
           <div className="banner3"></div>
+
           <div ref={aboutRef} className="content about-header">
             about me
           </div>
@@ -208,7 +214,7 @@ function App() {
             contact me
           </div>
           <div className="content contact">
-            <Form className="form">
+            <Form method="POST" onSubmit={handleSubmit} className="form">
               <div className="textarea-holder">
                 <Form.Group
                   className="mb-3 textarea-holder"
@@ -216,6 +222,7 @@ function App() {
                 >
                   <Form.Control
                     className="email"
+                    name="email"
                     type="email"
                     placeholder="Email address"
                   />
@@ -227,10 +234,17 @@ function App() {
                 >
                   <Form.Control
                     className="email"
-                    type="email"
+                    type="name"
+                    name="name"
                     placeholder="Name"
                   />
                 </Form.Group>
+
+                <ValidationError
+                  prefix="Email"
+                  field="email"
+                  errors={state.errors}
+                />
               </div>
 
               <Form.Group
@@ -242,12 +256,23 @@ function App() {
                 </Form.Text>
                 <Form.Control
                   className="textarea"
+                  name="textarea"
                   placeholder="Type your message here"
                   as="textarea"
                   rows={8}
                 />
               </Form.Group>
-              <Button className="submitButton" variant="primary" type="submit">
+              <ValidationError
+                prefix="Message"
+                field="message"
+                errors={state.errors}
+              />
+              <Button
+                type="submit"
+                disabled={state.submitting}
+                className="submitButton"
+                variant="primary"
+              >
                 Send
               </Button>
             </Form>
