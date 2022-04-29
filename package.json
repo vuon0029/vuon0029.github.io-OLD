@@ -5,6 +5,8 @@
   "homepage": "https://vuon0029.github.io/",
   "dependencies": {
     "@formspree/react": "^2.2.4",
+    "@splinetool/react-spline": "^2.1.0",
+    "@splinetool/runtime": "^0.9.36",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",

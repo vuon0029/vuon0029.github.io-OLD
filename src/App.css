@@ -243,11 +243,6 @@
   /* background-color: white; */
   color: white;
 }
-.second:hover {
-  /* font-size: 10px; */
-  /* perspective: 1000px; */
-  line-height: 30px;
-}
 .nav-text {
   color: rgb(221, 221, 221);
   font-size: 20px;
@@ -377,6 +372,25 @@
   color: white;
   margin-bottom: 10px;
   margin-left: 10px;
+}
+.keyboard-holder{
+  cursor: pointer;
+  top: 80%;
+  z-index: 999;
+  position: fixed;
+  overflow: hidden;
+  opacity: 0.1;
+  transition: all 0.25s ease-in-out;
+
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.keyboard-on{
+  opacity: 1;
+}
+.keyboard-holder:hover{
+  opacity: 1;
 }
 @keyframes slideFromLeft {
   0% {

@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { useRef, useEffect } from "react";
 import CarouselContainer from "./components/Carousel";
+import Keyboard from "./components/Keyboard";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { SiJavascript } from "react-icons/si";
@@ -16,12 +17,26 @@ import {
   SiGithub,
 } from "react-icons/si";
 import { useForm, ValidationError } from "@formspree/react";
+import useOnScreen from "./helpers/useOnScreen";
 
 function App() {
   const homeRef = useRef();
   const portfolioRef = useRef();
   const contactRef = useRef();
   const aboutRef = useRef();
+
+  const keyboard = document.getElementById("keyboard");
+  const isVisible = useOnScreen(contactRef);
+
+  useEffect(() => {
+    if (keyboard) {
+      if (isVisible) {
+        keyboard.classList.add("keyboard-on");
+      } else {
+        keyboard.classList.remove("keyboard-on");
+      }
+    }
+  }, [isVisible]);
 
   const scrollRef = (ref, where) => {
     ref.current.scrollIntoView({
@@ -62,24 +77,38 @@ function App() {
   return (
     <div className="App">
       <div className="bottom-left">
-        <div onClick={() => scrollRef(homeRef, "end")} className="nav-text">
+        <div
+          onClick={() => {
+            scrollRef(homeRef, "end");
+          }}
+          className="nav-text"
+        >
           home
         </div>
         <div className="line"></div>
         <div
-          onClick={() => scrollRef(portfolioRef, "start")}
+          onClick={() => {
+            scrollRef(portfolioRef, "start");
+          }}
           className="nav-text"
         >
           portfolio
         </div>
       </div>
       <div className="bottom-right">
-        <div onClick={() => scrollRef(aboutRef, "start")} className="nav-text">
+        <div
+          onClick={() => {
+            scrollRef(aboutRef, "start");
+          }}
+          className="nav-text"
+        >
           about
         </div>
         <div className="line"></div>
         <div
-          onClick={() => scrollRef(contactRef, "start")}
+          onClick={() => {
+            scrollRef(contactRef, "start");
+          }}
           className="nav-text"
         >
           contact
@@ -205,7 +234,7 @@ function App() {
               className="insta-card"
               width="400"
               height="318"
-              src="https://www.instagram.com/p/CbrEzchtba3/embed/"
+              src="https://www.instagram.com/p/Cc7B9uEuDma/embed/"
               frameborder="0"
             ></iframe>
           </div>
@@ -276,6 +305,19 @@ function App() {
                 Send
               </Button>
             </Form>
+          </div>
+          <div
+            onClick={() => {
+              if (contactRef.current) {
+                scrollRef(contactRef, "start");
+              } else {
+                alert("NO");
+              }
+            }}
+            id="keyboard"
+            className="keyboard-holder"
+          >
+            <Keyboard />
           </div>
         </div>
       </header>
