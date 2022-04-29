@@ -469,6 +469,9 @@
   .contact-header{
     top: 55%;
   }
+  .keyboard-holder{
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -520,5 +523,8 @@
   }
   .textarea{
     font-size: 15px;
+  }
+  .keyboard-holder{
+    display: none;
   }
 }
