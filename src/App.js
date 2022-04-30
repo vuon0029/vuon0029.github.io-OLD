@@ -306,6 +306,14 @@ function App() {
               </Button>
             </Form>
           </div>
+          <div className="mobile-nav-bottom">
+            <div className="nav-text-mobile">about</div>
+            <div className="nav-text-mobile">contact</div>
+          </div>
+          <div className="mobile-nav-top">
+            <div className="nav-text-mobile">home</div>
+            <div className="nav-text-mobile">portfolio</div>
+          </div>
           <div
             onClick={() => {
               if (contactRef.current) {
