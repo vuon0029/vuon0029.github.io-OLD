@@ -49,6 +49,7 @@ function App() {
   useEffect(() => {
     const script = document.createElement("script");
     const github = document.createElement("script");
+    const capcha = document.createElement("script");
 
     script.src = "https://platform.linkedin.com/badges/js/profile.js";
     script.async = true;
@@ -64,9 +65,16 @@ function App() {
 
     contact.appendChild(github);
 
+    capcha.src = "https://www.google.com/recaptcha/api.js";
+    capcha.async = true;
+    capcha.defer = true;
+
+    document.body.appendChild(capcha);
+
     return () => {
       about.removeChild(script);
       contact.removeChild(github);
+      document.body.removeChild(capcha);
     };
   }, []);
   const [state, handleSubmit] = useForm("mqkarobp");
@@ -296,6 +304,10 @@ function App() {
                 field="message"
                 errors={state.errors}
               />
+              <div
+                class="g-recaptcha"
+                data-sitekey="6LfEpbEfAAAAAOHeD5hmqbxgX-KeKgiqDh_Zt8Lm"
+              ></div>
               <Button
                 type="submit"
                 disabled={state.submitting}
