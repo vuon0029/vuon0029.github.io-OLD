@@ -194,9 +194,6 @@
 .icon:hover {
   transform: scale(1.1);
 }
-.icon:nth-child(1) {
-  margin-left: 15px;
-}
 .body-text {
   font-size: 30px;
   letter-spacing: 2px;
@@ -226,6 +223,7 @@
 }
 
 .text {
+
   font-size: 45px;
   writing-mode: vertical-rl;
   text-orientation: upright;
@@ -509,6 +507,9 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .skills-header {
+    font-size: 30px;
+  }
   .mobile-nav-bottom{
     top: 92%;
     z-index: 999;
@@ -543,6 +544,16 @@
   }
   .nav-text-mobile {
     display: block;
+
+    -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+
     cursor: pointer;
     margin: 10px;
     letter-spacing: 5px;
@@ -550,6 +561,7 @@
     font-size: 25px;
     transition: all 0.3s;
   }
+
   .bottom-left {
     display: none;
   }
@@ -557,41 +569,39 @@
     display: none;
   }
   .skills-holder {
-    top: 15%;
-    width: 80%;
+    top: 5%;
+    width: 70%;
   }
   .portfolio-holder {
-    top: 40%;
+    top: 30%;
     width: 100%;
   }
   .about-header{
-    top: -5%;
+    top: -10%;
+    font-size: 30px;
   }
   .about-holder{
-    top: 0%;
+    top: -5%;
   }
   .about-text{
-    font-size: 15px;
+    font-size: 14px;
   }
   .icon:hover {
     margin-bottom: 0px;
-  }
-  .about-text{
-    font-size: 16px;
   }
   .banner3{
     height: 300vh;
   }
   .linkedin {
-    top: 20%;
+    top: 12%;
   }
   .contact{
     width: 90%;
-    top: 72%;
+    top: 66%;
     padding: 30px;
   }
   .contact-header{
-    top: 68%;
+    top: 60%;
   }
   .email {
     font-size: 15px;
