@@ -319,12 +319,40 @@ function App() {
             </Form>
           </div>
           <div className="mobile-nav-bottom">
-            <div className="nav-text-mobile">about</div>
-            <div className="nav-text-mobile">contact</div>
+            <div
+              onClick={() => {
+                scrollRef(aboutRef, "center");
+              }}
+              className="nav-text-mobile"
+            >
+              about
+            </div>
+            <div
+              onClick={() => {
+                scrollRef(contactRef, "start");
+              }}
+              className="nav-text-mobile"
+            >
+              contact
+            </div>
           </div>
           <div className="mobile-nav-top">
-            <div className="nav-text-mobile">home</div>
-            <div className="nav-text-mobile">portfolio</div>
+            <div
+              onClick={() => {
+                scrollRef(homeRef, "end");
+              }}
+              className="nav-text-mobile"
+            >
+              home
+            </div>
+            <div
+              onClick={() => {
+                scrollRef(portfolioRef, "center");
+              }}
+              className="nav-text-mobile"
+            >
+              portfolio
+            </div>
           </div>
           <div
             onClick={() => {

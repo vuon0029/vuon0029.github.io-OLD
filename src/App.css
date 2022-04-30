@@ -150,6 +150,7 @@
   margin-bottom: 50px;
 }
 .contact-header {
+  top: 45%;
   align-self: center;
   font-size: 45px;
   letter-spacing: 3px;
@@ -265,7 +266,7 @@
   cursor: pointer;
 }
 .contact {
-  top: 55%;
+  top: 50%;
   width: 60%;
   border: 1px solid rgba(255, 255, 255, 0.2);
   background-color: transparent;
